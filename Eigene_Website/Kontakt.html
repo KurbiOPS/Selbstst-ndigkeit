@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt | OPS Development</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+</head>
+<body>
+    <nav>
+        <div class="wrap">
+            <div class="brand"><span class="cursor"></span>OPS Development</div>
+            <div class="nav-links">
+                <a href="home.html">Startseite</a>
+                <a href="leistung.html">Leistungen</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="preise.html">Preise</a>
+                <a href="ueber-mich.html">Über mich</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <a href="kontakt.html" class="nav-cta">Projekt anfragen</a>
+        </div>
+    </nav>
+
+    <section class="kontakt-hero">
+        <div class="wrap">
+            <div class="eyebrow">Kontakt</div>
+            <h1>Lass uns dein Projekt besprechen.</h1>
+            <p class="lead">Schreib mir kurz, worum es geht — ich melde mich zeitnah zurück.</p>
+        </div>
+    </section>
+
+    <section class="kontakt-main">
+        <div class="wrap kontakt-grid">
+            <form class="kontakt-form" onsubmit="event.preventDefault; alert('Formular ist noch ohne echten Versand.');">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Dein Name" required>
+
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" placeholder="deine@email.de" required>
+
+                <label for="nachricht">Nachricht</label>
+                <textarea id="nachricht" placeholder="Erzähle mir kurz von deinem Projekt ..." required></textarea>
+
+                <button type="submit" class="btn btn-primary">Nachricht senden</button>
+            </form>
+            <!-- Hier kommt in Schritt 3: Formular -->
+        </div>
+    </section>
+
+</body>
+</html>
