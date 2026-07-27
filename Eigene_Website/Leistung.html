@@ -1,51 +1,227 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title> Musikschule Ettlingen</title>
-  <link rel="stylesheet" href="css/global.css" type="text/css">
-  <link rel="stylesheet" href="css/angebotgebuehren.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>OPS Development | Webdesign & App Entwicklung</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css">
+    <link rel="stylesheet" href="css/leistungen.css" type="text/css">
 </head>
 <body>
-    <nav class="header-nav">
-        <a href="Home.html" class="logo-link">
-            <img src="./Bilder/logo.jpg" alt="Logo" class="header-logo">
-        </a>
-        <div class="header-links">
-            <a href="Home.html">Start</a>
-            <a href="Leistung.html">Leistung</a>
-            <a href="Gebühren.html">Gebühren</a>
+    <nav>
+        <div class="wrap">
+            <div class="brand"><span class="cursor"></span>OPS Development</div>
+            <div class="nav-links">
+                <a href="home.html">Startseite</a>
+                <a href="leistung.html">Leistungen</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="preise.html">Preise</a>
+                <a href="ueber-mich.html">Über mich</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <a href="#kontakt" class="nav-cta">Projekt anfragen</a>
         </div>
     </nav>
-    
-  
-  <table class="angebot-tabelle">
-    <thead>
-        <tr>
-            <th class="Überschrift" colspan="3">unsere Angebote</th>
-        </tr>
-    </thead>
-    <tr>
-      <th>Instrument</th>
-      <th>Lehrer</th>
-      <th>Unterricht</th>
-    </tr>
-    <tr>
-      <td>Flöte</td>
-      <td>Max Mustermann</td>
-      <td>Dienstag und Donnerstag</td>
-    </tr>
-    <tr>
-      <td>Gitarre</td>
-      <td>Erika Musterfrau</td>
-      <td>Montag und Mittwoch</td>
-    </tr>
-    <tr>
-      <td colspan="3" onclick="window.open('./Formulare/unterrichtsangebot.pdf', '_blank')">
-        Hier gibt es die Tabelle zum Download
-      </td>
-    </tr>
-  </table>
 
+    <section class="leistungen">
+        <div class="leistungen-uebersicht">
+            <a href="#landingpage">Landingpage</a>
+            <a href="#kleinewebsite">kleine Firmen-/Vereinswebsite</a>
+            <a href="#websitekontaktformular">Website mit Kontaktformular</a>
+            <a href="#websiteterminbuchung">Website mit Terminbuchung</a>
+            <a href="#webdesign">Website überarbeitung</a>
+            <a href="#kleinewebapp">kleine WebApp</a>
+            <a href="#individuelleapp">individuelle App</a>
+            <a href="#wartungbetreuung">Wartung und Betreuung</a>
+        </div>
+
+        <div class="leistungen-grid">
+            <div id="landingpage" class="card leistung landingpage">
+                <button class="flip-btn">→</button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Einfache Landingpage</h3>
+                        <p class="preis">ab 150€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>individuelle Landingpage</h3>
+                        <p>Eine einzelne Seite für einen professionellen Einstieg ins Internet.</p>
+                        <h5>Beispiel-Inhalte:</h5>
+                        <ul class="enthalten-liste">
+                            <li>Startseite</li>
+                            <li>Kontaktinformationen</li>
+                            <li>Impressum</li>
+                            <li>Datenschutz</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kleinewebsite" class="card leistung kleinewebsite">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>kleine Firmen-/Vereinswebsite</h3>
+                        <p class="preis">ab 350€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>kleine Firmen-/Vereinswebsite</h3>
+                        <p>Eine individuelle Website mit mehreren Unterseiten, abgestimmt auf Ihr Unternehmen und Ihre Ziele.</p>
+                        <h5>Beispiel-Seiten:</h5>
+                        <ul class="enthalten-liste">
+                            <li>Startseite</li>
+                            <li>Über uns</li>
+                            <li>Leistungen</li>
+                            <li>Kontakt</li>
+                            <li>Impressum</li>
+                            <li>Datenschutz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="websitekontaktformular" class="card leistung websitekontaktformular">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Website mit Kontaktformular</h3>
+                        <p class="preis">ab 600€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Website mit Kontaktformular</h3>
+                        <p>Perfekt für Unternehmen, die Kundenanfragen direkt über ihre Website erhalten möchten.</p>
+                        <h5>Beispiel-Seiten:</h5>
+                        <ul class="enthalten-liste">
+                            <li>Startseite</li>
+                            <li>Über uns</li>
+                            <li>Leistungen</li>
+                            <li class="hauptinfo">Kontaktformular</li>
+                            <li>Impressum</li>
+                            <li>Datenschutz</li>
+                        </ul>
+                        <h5>Zusätzlich enthalten:</h5>
+                        <ul class="zusatz-liste">
+                            <li>Funktionierendes Kontaktformular</li>
+                            <li>E-Mail-Benachrichtigung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="websiteterminbuchung" class="card leistung websiteterminbuchung">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Website mit Terminbuchung</h3>
+                        <p class="preis">ab 800€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Website mit Terminbuchung</h3>
+                        <p>Für Unternehmen, die Termine online vereinbaren möchten.</p>
+                        <ul class="enthalten-liste">
+                            <li>Startseite</li>
+                            <li>Über uns</li>
+                            <li>Leistungen</li>
+                            <li class="hauptinfo">Terminbuchung</li>
+                            <li class="hauptinfo">Kontakt</li>
+                            <li>Impressum</li>
+                            <li>Datenschutz</li>
+                        </ul>
+                        <h5>Zusätzlich enthalten</h5>
+                        <ul class="zusatz-liste">
+                            <li>Online-Terminbuchung</li>
+                            <li>Kontaktformular</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="webdesign" class="card leistung webdesign">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Website überarbeitung</h3>
+                        <p class="preis">Preis auf Anfrage</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Website überarbeitung</h3>
+                        <p>Ihre Website funktioniert, wirkt aber nicht mehr zeitgemäß? Gemeinsam bringen wir sie technisch und optisch auf den neuesten Stand.</p>
+                        <h5>Mögliche Designs:</h5>
+                        <ul class="enthalten-liste">
+                            <li>modernes Design</li>
+                            <li>Responsive Optimierung</li>
+                            <li>Schnellere Ladezeiten</li>
+                            <li>Neue Inhalte einpflegen</li>
+                            <li>Kontaltformular ergänzen</li>
+                            <li>Technische Aktualisierung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kleinewebapp" class="card leistung kleinewebapp">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>kleine WebApp</h3>
+                        <p class="preis">ab 800€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>kleine WebApp</h3>
+                        <p>Individuelle Webanwendungen für interne Abläufe oder Kunden.</p>
+                        <h5>Mögliche Funktionen:</h5>
+                        <ul class="enthalten-liste">
+                            <li>Login-System</li>
+                            <li>Benutzerverwaltung</li>
+                            <li>Datenverwaltung</li>
+                            <li>individuelle Funktionen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="individuelleapp" class="card leistung individuelleapp">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Individuelle App</h3>
+                        <p class="preis">ab 1500€</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Individuelle App</h3>
+                        <p>Maßgeschneiderte Apps für Windows, Android und iOS – passend zu Ihren Anforderungen.</p>
+                        <ul class="enthalten-liste">
+                            <li>Benutzerkonten</li>
+                            <li>Push-Benachrichtungen</li>
+                            <li>individuelle Features</li>
+                            <li>Modernes Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wartungbetreuung" class="card leistung wartungbetreuung">
+                <button class="flip-btn">></button>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Wartung & Betreuung</h3>
+                        <p class="preis">Preis auf Anfrage</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Wartung & Betreuung</h3>
+                        <p>Auch nach der Fertigstellung unterstütze ich sie gerne</p>
+                        <ul class="enthalten-liste">
+                            <li>Sicherheitsupdates</li>
+                            <li>Inhaltspflege</li>
+                            <li>Fehlerbehebung</li>
+                            <li>Technischer Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/leistungen.js"></script>
 </body>
 </html>

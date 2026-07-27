@@ -32,9 +32,29 @@
 
     <section class="kontakt-main">
         <div class="wrap kontakt-grid">
-            <form class="kontakt-form" onsubmit="event.preventDefault; alert('Formular ist noch ohne echten Versand.');">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Dein Name" required>
+            <form class="kontakt-form" onsubmit="event.preventDefault(); alert('Formular ist noch ohne echten Versand.');">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="Dein Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firma">Firma</label>
+                        <input id="firma" type="text" placeholder="Firmenname (optional)">
+                    </div>
+                </div>
+                <label>Budget (optional)</label>
+
+                <div class="budget-auswahl">
+                    <button type="button" class="budget-btn" data-budget="150 - 500 €">150 - 500 €</button>
+                    <button type="button" class="budget-btn" data-budget="500 - 1.000 €">500 - 1.000 €</button>
+                    <button type="button" class="budget-btn" data-budget="1.000 - 2.500 €">1.000 - 2.500 €</button>
+                    <button type="button" class="budget-btn" data-budget="2.500 €+">2.500 €+</button>
+                    <button type="button" class="budget-btn" data-budget="Noch offen">Noch offen</button>
+                </div>
+
+                <input type="hidden" id="budget" name="budget">
 
                 <label for="email">E-Mail</label>
                 <input id="email" type="email" placeholder="deine@email.de" required>
@@ -44,9 +64,26 @@
 
                 <button type="submit" class="btn btn-primary">Nachricht senden</button>
             </form>
-            <!-- Hier kommt in Schritt 3: Formular -->
         </div>
     </section>
-
+    <section class="kontakt-info">
+        <div class="wrap">
+            <div class="badge-kontaktinfo">
+                <div class="badge"><span class="info-icon"><svg class="icon icon-sm"><use href="svg/icons.svg#icon-mail"></use></svg></span>
+                    E-Mail (bald)
+                </div>
+                <div class="badge"><span class="info-icon"><svg class="icon icon-sm"><use href="svg/icons.svg#icon-phone"></use></svg></span>
+                    +49 151 56655516
+                </div>
+                <div class="badge"><span class="info-icon"><svg class="icon icon-sm"><use href="svg/icons.svg#icon-instagram"></use></svg></span>
+                    Instagram (bald)
+                </div>
+                <div class="badge"><span class="info-icon"><svg class="icon icon-sm icon-filled"><use href="svg/icons.svg#icon-linkedin"></use></svg></span>
+                    LinkedIn (bald)
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/kontakt.js"></script>
 </body>
 </html>

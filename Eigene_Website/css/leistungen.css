@@ -1,0 +1,171 @@
+/* ===== Seiten-Rahmen ===== */
+.leistungen{
+    position:relative;
+    padding-top:60px;
+}
+
+/* ===== Flip-Basis (gilt für jede .card) ===== */
+.card{
+    position:relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card-inner{
+    display:grid;   /* GEÄNDERT: Grid statt nur position:relative -- Front/Back liegen jetzt als Grid-Items übereinander */
+    transition:0.6s;
+    transform-style:preserve-3d;
+}
+
+.card-front, .card-back{
+    grid-area: 1 / 1;   /* GEÄNDERT: beide Elemente liegen in derselben Grid-Zelle (Zeile 1, Spalte 1) -- dadurch überlappen sie sich, statt untereinander zu stehen */
+    width:100%;
+    border-radius:22px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    backface-visibility:hidden;
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+    /* kein position:absolute mehr -- dadurch zählt die HÖHE beider Elemente wieder für die automatische Zeilenhöhe des Grids mit */
+}
+.card-back{
+    transform:rotateY(180deg);
+}
+
+.card.flipped .card-inner{
+    transform:rotateY(180deg);
+}
+
+/* ===== Flip-Button ===== */
+.flip-btn{
+    position:absolute;
+    bottom:-16px;
+    right:-16px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+
+    background: var(--accent-cyan);
+    border:none;
+    color: var(--ink);
+    font-size:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    transition:transform 0.3s ease;
+    z-index:5;
+}
+.card.flipped .flip-btn{
+    transform:rotate(180deg);
+}
+
+/* ===== Übersicht / Sprungmarken oben rechts ===== */
+.leistungen-uebersicht{
+    position:absolute;
+    top:0;
+    right:40px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:13.5px;
+}
+.leistungen-uebersicht a{
+    color: var(--text-muted);
+}
+.leistungen-uebersicht a:hover{
+    color: var(--accent-cyan);
+}
+
+/* ===== Leistungen-Grid ===== */
+.leistungen-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(420px,1fr));
+    gap:100px 180px;
+    max-width:1200px;
+    margin:100px auto 0;
+    align-items:start;   /* NEU: jede Karte behält ihre eigene, natürliche Höhe, statt sich auf die Höhe der Nachbar-Karte zu strecken */
+}
+
+.card.leistung{
+    /* KEINE feste height mehr -- die Karte ist jetzt automatisch so hoch wie ihr Inhalt (Front oder Back, je nachdem was länger ist) */
+    animation: float 5s ease-in-out infinite;
+    scroll-margin-top:100px;
+}
+
+/* Der bisherige nth-child(even)-Versatz ist ENTFERNT:
+    Bei stark unterschiedlich hohem Karteninhalt sorgt ein margin-top-Versatz in einem
+    CSS-Grid für genau die Überlappung, die du gerade gesehen hast -- margin vergrößert
+    die Grid-Zeile nämlich nicht mit. Das Grid sieht dadurch jetzt gleichmäßig aus,
+   ohne Überlappungsrisiko. Siehe Erklärung im Chat, falls du den Versatz trotzdem willst. */
+
+.card.leistung .card-front,
+.card.leistung .card-back{
+    background: var(--bg-panel);
+    padding:36px 30px;
+    align-items:flex-start;
+    justify-content:flex-start;
+    text-align:left;
+}
+
+.card.leistung .preis{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:22px;
+    font-weight:700;
+    color: var(--accent-cyan);
+    margin-top:10px;
+}
+
+.card.leistung h5{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color: var(--text-muted);
+    margin-top:16px;
+    margin-bottom:6px;
+}
+
+/* ===== Listen auf der Kartenrückseite ===== */
+.enthalten-liste,
+.zusatz-liste{
+    list-style:none;
+    padding:0;
+    margin-top:6px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+.enthalten-liste li{
+    font-size:13.5px;
+    color: var(--text-muted);
+}
+.enthalten-liste li::before{
+    content:"✓ ";
+    color: var(--accent-cyan);
+}
+.enthalten-liste li.hauptinfo{
+    color: var(--text-color);
+    font-weight:600;
+}
+.enthalten-liste li.hauptinfo::before{
+    color: var(--accent-amber);
+}
+
+.zusatz-liste li{
+    font-size:13.5px;
+    color: var(--text-muted);
+}
+.zusatz-liste li::before{
+    content:"+ ";
+    color: var(--accent-amber);
+}
+
+@keyframes float{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0px); }
+}
